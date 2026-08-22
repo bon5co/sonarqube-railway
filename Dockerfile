@@ -20,6 +20,12 @@ ENV SONAR_SEARCH_JAVAADDITIONALOPTS="-Dnode.store.allow_mmap=false" \
 # itself; Railway does not, so this cannot be left to the runtime.)
 RUN cp -a /opt/sonarqube/extensions /opt/sonarqube/extensions-image
 
+# Railway's private network is IPv6-only, and the JVM prefers IPv4, so the JDBC connection to
+# the Postgres service times out with `SocketTimeoutException: Connect timed out` even though
+# the hostname resolves. JAVA_TOOL_OPTIONS reaches every JVM SonarQube spawns (app, web,
+# compute engine, search), which is what this needs -- setting it on one of them is not enough.
+ENV JAVA_TOOL_OPTIONS="-Djava.net.preferIPv6Addresses=true"
+
 COPY --chmod=0755 railway-entrypoint.sh /usr/local/bin/railway-entrypoint
 COPY --chmod=0755 railway-seed-admin.sh /usr/local/bin/railway-seed-admin
 

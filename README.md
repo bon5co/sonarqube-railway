@@ -1,5 +1,9 @@
 # sonarqube-railway
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/sonarqube-or-just-updated-your-scan-hist?referralCode=Z1xivh&utm_medium=integration&utm_source=template&utm_campaign=generic)
+
+**Deploy on Railway:** [SonarQube template](https://railway.com/deploy/sonarqube-or-just-updated-your-scan-hist?referralCode=Z1xivh&utm_medium=integration&utm_source=template&utm_campaign=generic)
+
 A thin wrapper around the official `sonarqube` Community image that makes it deployable on
 Railway. Everything here exists because it was measured, not assumed.
 

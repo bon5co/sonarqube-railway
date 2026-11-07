@@ -25,5 +25,5 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/sonarqube-railway:26.8.0
+            ghcr.io/${{ github.repository_owner }}/sonarqube-railway:26.11.0
             ghcr.io/${{ github.repository_owner }}/sonarqube-railway:latest
